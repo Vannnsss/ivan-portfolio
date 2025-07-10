@@ -5,7 +5,6 @@ import React, {useState} from "react";
 
 import {Swiper, SwiperSlide, } from "swiper/react";
 import "swiper/css";
-import type { Swiper } from "swiper";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
@@ -81,10 +80,11 @@ const Work = () => {
 
   const [project, setProject] = useState(projects[0]);
 
-  const handleSlideChange = (swiper) => {
-    const currentIndex = swiper.activeIndex;
-    setProject(projects[currentIndex]);
-  }
+  const handleSlideChange = (swiper: Swiper) => {
+  const currentIndex = swiper.activeIndex;
+  setProject(projects[currentIndex]);
+};
+
 
   return (
     <motion.section initial={{ opacity:0 }} 
