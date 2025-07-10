@@ -1,10 +1,8 @@
 "use client";
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from 'react';
 
 
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { CiMenuFries } from "react-icons/ci"
 
@@ -32,7 +30,6 @@ const links = [
 ]
 
 const MobileNav = () => {
-  const pathname = usePathname();
 
   return (
     <Sheet>
