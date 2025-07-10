@@ -15,10 +15,11 @@ const stairAnimation ={
 
 // calculate the reverse index for staggered delay
 
-const reverseIndex = (index) => {
-    const totalSteps = 6; // step
-    return totalSteps - index -1;
-}
+const reverseIndex = (index: number) => {
+  const totalSteps = 6;
+  return totalSteps - index - 1;
+};
+
 
 const Stairs = () => {
   return (
