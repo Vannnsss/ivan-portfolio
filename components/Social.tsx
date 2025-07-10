@@ -9,7 +9,13 @@ const social = [
   {icon: <FaInstagram />, path:'https://www.instagram.com/1_vannn/' },
 ]
 
-const Social = ({containerStyles, iconStyles}) => {
+type SocialProps = {
+  containerStyles: string;
+  iconStyles?: string;
+};
+
+const Social = ({ containerStyles, iconStyles }: SocialProps) => {
+
   return (
     <div className={containerStyles}>
       {social.map((item, index)=> {
