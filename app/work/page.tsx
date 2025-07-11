@@ -25,7 +25,7 @@ const projects = [
     category: "Frontend",
     title: "Project 1",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolores explicabo provident beatae vel ea incidunt qui consequuntur harum nostrum!",
+      "Sistem Informasi Koperasi Desa/Kelurahan berbasis web yang dibangun menggunakan Yii Framework, Bootstrap, dan JavaScript. Menampilkan informasi layanan koperasi secara interaktif dan responsif, termasuk modul simpan pinjam, logistik, berita, dan laporan transparansi. Desain modern dan user-friendly memudahkan masyarakat dalam mengakses informasi dan layanan yang tersedia.",
     stack: [
       { name: "Yii PHP Framework" },
       { name: "JavaScript" },
@@ -40,7 +40,7 @@ const projects = [
     category: "Fullstack Web",
     title: "Project 2",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolores explicabo provident beatae vel ea incidunt qui consequuntur harum nostrum!",
+      "Website ini dirancang untuk mendeteksi gangguan gastrointestinal seperti gastritis, GERD, dan tukak lambung. Menggunakan PHP Native, Flask Python, dan Machine Learning, pengguna cukup memasukkan gejala untuk mendapatkan prediksi penyakit secara cepat. Cocok untuk deteksi awal sebelum konsultasi medis.",
     stack: [
       { name: "PHP Native" },
       { name: "Flask Python" },
@@ -55,7 +55,7 @@ const projects = [
     category: "Portfolio",
     title: "Project 3",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolores explicabo provident beatae vel ea incidunt qui consequuntur harum nostrum!",
+      "Website ini merupakan portofolio pribadi yang menampilkan profil, pengalaman, dan proyek yang telah diselesaikan. Dibangun menggunakan Next.js, Tailwind CSS, dan Node.js, situs ini dirancang dengan antarmuka modern, ringan, dan responsif. Pengunjung dapat melihat informasi lengkap, mengunduh CV, serta menghubungi langsung melalui berbagai platform.",
     stack: [
       { name: "Next Js" },
       { name: "Tailwind CSS" },
@@ -89,13 +89,13 @@ const Work = () => {
           {/* LEFT CONTENT */}
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+              <div className="text-8xl leading-none font-extrabold text-outline text-dark">
                 {project.num}
               </div>
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+              <h2 className="text-[42px] font-bold leading-none text-dark group-hover:text-accent transition-all duration-500 capitalize">
                 {project.category} project
               </h2>
-              <p className="text-white/60">{project.description}</p>
+              <p className="text-dark">{project.description}</p>
               <ul className="flex gap-4 flex-wrap">
                 {project.stack.map((item, index) => (
                   <li key={index} className="text-xl text-accent">
@@ -106,13 +106,13 @@ const Work = () => {
               </ul>
               <div className="border border-white/20"></div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-10">
                 <Link href={project.live} passHref>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <div className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group cursor-pointer">
-                          <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                        <div className="w-[70px] h-[70px] rounded-full bg-black/10 flex justify-center items-center group cursor-pointer">
+                          <BsArrowUpRight className="text-dark text-3xl group-hover:text-accent" />
                         </div>
                       </TooltipTrigger>
                       <TooltipContent>
@@ -126,8 +126,8 @@ const Work = () => {
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <div className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group cursor-pointer">
-                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        <div className="w-[70px] h-[70px] rounded-full bg-black/10 flex justify-center items-center group cursor-pointer">
+                          <BsGithub className="text-dark text-3xl group-hover:text-accent" />
                         </div>
                       </TooltipTrigger>
                       <TooltipContent>
@@ -165,7 +165,7 @@ const Work = () => {
               ))}
               <WorkSliderBtns
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-[#27272c] hover:bg-accent text-dark text-[22px] bg-white/10 rounded-full w-11 h-11 flex items-center justify-center cursor-pointer"
+                btnStyles="bg-[#27272c] hover:bg-accent text-white text-[22px] bg-dark rounded-full w-11 h-11 flex items-center justify-center cursor-pointer"
                 iconsStyles="text-xl"
               />
             </Swiper>

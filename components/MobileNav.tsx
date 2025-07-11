@@ -1,49 +1,35 @@
 "use client";
-import React from 'react';
-
-
+import React, { useState } from 'react';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import Link from 'next/link';
-import { CiMenuFries } from "react-icons/ci"
+import { TiThMenuOutline } from "react-icons/ti";
 
 const links = [
-    {
-        name : "Home",
-        path : "/"
-    },
-    {
-        name : "Services",
-        path : "/services"
-    },
-    {
-        name : "Resume",
-        path : "/resume"
-    },
-    {
-        name : "Work",
-        path : "/work"
-    },
-    {
-        name : "Contact",
-        path : "/contact"
-    },
-]
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Resume", path: "/resume" },
+  { name: "Work", path: "/work" },
+  { name: "Contact", path: "/contact" },
+];
 
 const MobileNav = () => {
+  const [open, setOpen] = useState(false);
 
   return (
-    <Sheet>
-      <SheetTrigger className="flex justify-center items-center cursor-pointer">
-        <CiMenuFries className="text-[32px] text-accent" />
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger
+        className="flex justify-center items-center cursor-pointer"
+        onClick={() => setOpen(true)}
+      >
+        <TiThMenuOutline className="text-[32px] text-accent" />
       </SheetTrigger>
+
       <SheetContent className="flex flex-col">
-        
-        {/* DialogTitle wajib */}
         <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
 
         {/* Logo */}
         <div className="text-center mb-28 mt-28 text-4xl font-semibold">
-          <Link href="/">
+          <Link href="/" onClick={() => setOpen(false)}>
             Ivan<span className="text-accent"> .</span>
           </Link>
         </div>
@@ -52,8 +38,9 @@ const MobileNav = () => {
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link, index) => (
             <Link
-              href={link.path}
               key={index}
+              href={link.path}
+              onClick={() => setOpen(false)} // <-- TUTUP MENU
               className="text-xl capitalize hover:text-accent transition-all"
             >
               {link.name}
@@ -65,4 +52,4 @@ const MobileNav = () => {
   );
 };
 
-export default MobileNav
+export default MobileNav;

@@ -23,8 +23,16 @@ const Header = () => {
         <div className="hidden xl:flex items-center gap-8 text-md ">
           <Nav />
           <Link href="/contact" className="no-underline">
-            <Button className="bg-accent-foreground hover:bg-accent text-accent hover:text-accent-foreground cursor-pointer border-2 border-accent hover:border-2 hover:border-primary"
-            >Hire me</Button>
+            <Button
+              className="bg-accent-foreground text-accent border-2 border-accent
+                        hover:bg-accent hover:text-accent-foreground hover:border-primary
+                        dark:bg-gray-700 dark:text-black dark:bg-accent-dark
+                        transition-colors duration-300 dark:border-white "
+            >
+              Hire me
+            </Button>
+
+
           </Link>
         </div>
 
