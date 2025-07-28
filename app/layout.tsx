@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -15,10 +14,19 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"]
 });
 
-export const metadata: Metadata = {
-  title: "Portfolio || Ivan",
-  description: "by Ivan Septa Adi Pratama",
+export const metadata = {
+  metadataBase: new URL('https://ivanseptaadipratama.vercel.app'),
+  title: {
+    default: 'Ivan Septa | Web Developer',
+    template: '%s | Ivan Septa',
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/manifest.json',
 };
+
 
 export default function RootLayout({
   children,
