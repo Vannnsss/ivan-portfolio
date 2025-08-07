@@ -61,15 +61,16 @@ export default function Home() {
 
             {/* Button & Social Media */}
             <div className="flex flex-col xl:flex-row items-center gap-8 justify-between xl:justify-start">
-              <Button
-                variant="outline"
-                size="lg"
-                className="uppercase items-center gap-1 bg-white dark:bg-background text-dark dark:text-accent hover:bg-accent-dark hover:bg-accent rounded-4xl border-2 border-accent"
-              >
-                <span>Download CV</span>
-                <FiDownload />
-              </Button>
-
+              <a href="/uploads/Resume.pdf" download>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="uppercase items-center gap-1 bg-white dark:bg-background text-dark dark:text-accent hover:bg-accent-dark hover:bg-accent rounded-4xl border-2 border-accent"
+                >
+                  <span>Download CV</span>
+                  <FiDownload />
+                </Button>
+              </a>
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-8 text-2xl"
