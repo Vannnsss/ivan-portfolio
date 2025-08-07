@@ -1,10 +1,9 @@
 "use client";
 import React from 'react'
 import Link from 'next/link';
-import {FaGithub, FaLinkedinIn, FaInstagram} from "react-icons/fa"
+import { FaLinkedinIn, FaInstagram} from "react-icons/fa"
 
 const social = [
-  {icon: <FaGithub />, path:'https://github.com/Vannnsss' },
   {icon: <FaLinkedinIn />,  path:'https://www.linkedin.com/in/ivan-septa-adi-pratama-a25b00271/' },
   {icon: <FaInstagram />, path:'https://www.instagram.com/1_vannn/' },
 ]
