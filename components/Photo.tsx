@@ -25,7 +25,7 @@ const Photo = () => {
             }} 
             className="w-[298px] h-[298px] xl:w-[495px] xl:h-[495px] mix-blend-normal absolute left-1.5 top-1.5 
                         md:w-[290px] md:h-[290px] sm:w-[290px] sm:h-[290px]">
-                <Image src="/assets/ivan.png" priority quality={100} fill alt='photo' className='object-contain'/>
+                <Image src="/assets/ivan.png" priority quality={100} fill alt="Ivan Septa Adi Pratama, Fullstack Web Developer" className='object-contain'/>
             </motion.div>
 
             {/* circle */}

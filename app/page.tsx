@@ -6,7 +6,7 @@ import Photo from '@/components/Photo';
 import Stats from '@/components/Stats';
 
 export const metadata = {
-  title: 'Ivan Septa | Fullstack Web Developer',
+  title: 'Ivan Septa Adi Pratama | Fullstack Developer',
   description:
     'Portofolio pribadi Ivan Septa Adi Pratama — Fullstack Developer dengan keahlian React, Next.js, dan machine learning.',
   keywords: [
@@ -19,24 +19,24 @@ export const metadata = {
   ],
   robots: 'index, follow',
   openGraph: {
-    title: 'Ivan Septa | Fullstack Web Developer',
+    title: 'Ivan Septa Adi Pratama | Fullstack Developer',
     description:
       'Portofolio pribadi Ivan Septa Adi Pratama — Fullstack Developer dengan keahlian React, Next.js, dan machine learning.',
     url: 'https://ivanseptaadipratama.vercel.app/',
     images: [
       {
-        url: '/images/preview.png',
+        url: '/assets/ivan.png',
         width: 1200,
         height: 630,
-        alt: 'Ivan Septa Portofolio Preview',
+        alt: 'Ivan Septa Adi Pratama',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ivan Septa | Fullstack Developer',
+    title: 'Ivan Septa Adi Pratama | Fullstack Developer',
     description: 'Fullstack Web Developer yang fokus pada Next.js dan teknologi modern.',
-    images: ['/images/preview.png'],
+    images: ['/assets/ivan.png'],
   },
 };
 
@@ -47,12 +47,14 @@ export default function Home() {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* Text Section */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl text-accent dark:text-white">Fullstack Web Developer</span>
+            <p className="text-xl text-accent dark:text-white">
+              Hello I'm
+            </p>
 
             <h1 className="h1 mb-6 text-black dark:text-white/60">
-              Hello I'm <br />
-              <span className="text-accent dark:text-new">Ivan Septa Adi Pratama</span>
+              Ivan Septa Adi Pratama <br /> <span className="text-accent dark:text-new">Fullstack Developer</span>
             </h1>
+
 
             <p className="max-w-[500px] mb-10 text-dark dark:text-white/60 leading-relaxed">
               I am an IT graduate specializing in fullstack web development, with additional experience in machine
