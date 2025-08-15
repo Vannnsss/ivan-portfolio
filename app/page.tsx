@@ -9,6 +9,9 @@ export const metadata = {
   title: 'Ivan Septa Adi Pratama | Fullstack Developer',
   description:
     'Portofolio pribadi Ivan Septa Adi Pratama — Fullstack Developer dengan keahlian React, Next.js, dan machine learning.',
+  verification: {
+    google: 'mrcmxWAQHOBc70F_piZ40RGOCtut4qWXTaorFQG5Hh8'
+  },
   keywords: [
     'Ivan Septa',
     'Portofolio Web Developer',
@@ -35,7 +38,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ivan Septa Adi Pratama | Fullstack Developer',
-    description: 'Fullstack Web Developer yang fokus pada Next.js dan teknologi modern.',
+    description:
+      'Fullstack Web Developer yang fokus pada Next.js dan teknologi modern.',
     images: ['/assets/ivan.png'],
   },
 };
