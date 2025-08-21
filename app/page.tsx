@@ -8,7 +8,7 @@ import Stats from '@/components/Stats';
 export const metadata = {
   title: 'Ivan Septa Adi Pratama | Fullstack Developer',
   description:
-    'Portofolio pribadi Ivan Septa Adi Pratama — Fullstack Developer dengan keahlian React, Next.js, dan machine learning.',
+    'Portofolio Pribadi Ivan Septa Adi Pratama — Fullstack Developer dengan keahlian PHP laravel, Yii, React, Next.js, Python, dan Machine Learning.',
   verification: {
     google: 'mrcmxWAQHOBc70F_piZ40RGOCtut4qWXTaorFQG5Hh8'
   },
@@ -16,15 +16,23 @@ export const metadata = {
     'Ivan Septa',
     'Portofolio Web Developer',
     'Fullstack Developer',
+    'Python',
+    'Php Laravel',
+    'Php Yii',
     'React Developer',
     'Next.js',
     'Machine Learning',
+
   ],
   robots: 'index, follow',
+  icons: {
+    icon: '/portfolio.png',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: 'Ivan Septa Adi Pratama | Fullstack Developer',
     description:
-      'Portofolio pribadi Ivan Septa Adi Pratama — Fullstack Developer dengan keahlian React, Next.js, dan machine learning.',
+      'Portofolio Pribadi Ivan Septa Adi Pratama — Fullstack Developer dengan keahlian PHP laravel, Yii, React, Next.js, Python, dan Machine Learning.',
     url: 'https://ivanseptaadipratama.vercel.app/',
     images: [
       {
@@ -39,7 +47,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Ivan Septa Adi Pratama | Fullstack Developer',
     description:
-      'Fullstack Web Developer yang fokus pada Next.js dan teknologi modern.',
+      'Fullstack Web Developer yang fokus pada Next.js, Yii dan Lainnya.',
     images: ['/assets/ivan.png'],
   },
 };
