@@ -17,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL('https://ivanseptaadipratama.vercel.app'),
   title: {
-    default: 'Ivan Septa | Web Developer',
-    template: '%s | Ivan Septa',
+    default: 'Ivan Septa Adi Pratama | Fullstack Developer',
+    template: '%s | Ivan Septa Adi Pratama',
   },
   icons: {
     icon: '/favicon.ico',

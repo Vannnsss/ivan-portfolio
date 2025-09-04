@@ -13,7 +13,7 @@ export const metadata = {
     google: 'mrcmxWAQHOBc70F_piZ40RGOCtut4qWXTaorFQG5Hh8'
   },
   keywords: [
-    'Ivan Septa',
+    'Ivan Septa Adi Pratama',
     'Portofolio Web Developer',
     'Fullstack Developer',
     'Python',
