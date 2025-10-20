@@ -25,10 +25,6 @@ export const metadata = {
 
   ],
   robots: 'index, follow',
-  icons: {
-    icon: '/portfolio.png',
-    apple: '/apple-touch-icon.png',
-  },
   openGraph: {
     title: 'Ivan Septa Adi Pratama | Fullstack Developer',
     description:
