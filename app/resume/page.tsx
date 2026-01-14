@@ -16,42 +16,7 @@ const experience = {
       company:"Indah Logistic",
       position: "Fullstack Developer",
       duration: "June 2025 - Present"
-    },
-    {
-      company:"Indah Logistic",
-      position: "Fullstack Developer",
-      duration: "June 2025 - Present"
-    },
-    {
-      company:"Indah Logistic",
-      position: "Fullstack Developer",
-      duration: "June 2025 - Present"
-    },
-    {
-      company:"Indah Logistic",
-      position: "Fullstack Developer",
-      duration: "June 2025 - Present"
-    },
-    {
-      company:"Indah Logistic",
-      position: "Fullstack Developer",
-      duration: "June 2025 - Present"
-    },
-    {
-      company:"Indah Logistic",
-      position: "Fullstack Developer",
-      duration: "June 2025 - Present"
-    },
-    {
-      company:"Indah Logistic",
-      position: "Fullstack Developer",
-      duration: "June 2025 - Present"
-    },
-    {
-      company:"Indah Logistic",
-      position: "Fullstack Developer",
-      duration: "June 2025 - Present"
-    },
+    }
   ]
 };
 
@@ -93,13 +58,13 @@ const education = {
   items: [
     {
       institution:"Pamulang University",
-      degree: "Bachelor of Computer Science",
-      duration: "2021 - 2025"
+      degree: "Master of Computer Science",
+      duration: "2025 - On Going"
     },
     {
-      institution:"Online Course",
-      degree: "Web Programming",
-      duration: "2022"
+      institution:"Pamulang University",
+      degree: "Bachelor of Computer Science",
+      duration: "2021 - 2025"
     },
     {
       institution:"Online Course",
