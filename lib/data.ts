@@ -1,5 +1,5 @@
-import { FaJs, FaReact, FaNodeJs, FaLaravel } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs, SiYii, SiBootstrap, SiPython, SiMysql } from "react-icons/si";
+import { FaReact, FaLaravel, FaServer } from "react-icons/fa";
+import { SiTailwindcss, SiNextdotjs, SiYii, SiPython, SiMysql, SiGrafana, SiRedis } from "react-icons/si";
 import { FaLinkedinIn, FaInstagram, FaGithub } from "react-icons/fa";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -57,25 +57,25 @@ export const stats = [
 ];
 
 export const skillsList = [
+  { name: "Yii2 Framework", icon: SiYii, category: "Backend" },
+  { name: "MySQL", icon: SiMysql, category: "Database" },
+  { name: "Memcached / Caching", icon: SiRedis, category: "Performance" },
+  { name: "Grafana Monitoring", icon: SiGrafana, category: "DevOps" },
+  { name: "Load Balancer & Queue", icon: FaServer, category: "Architecture" },
   { name: "Next.js", icon: SiNextdotjs, category: "Frontend" },
   { name: "React", icon: FaReact, category: "Frontend" },
   { name: "Tailwind CSS", icon: SiTailwindcss, category: "Frontend" },
-  { name: "JavaScript", icon: FaJs, category: "Languages" },
-  { name: "Python / ML", icon: SiPython, category: "Backend & AI" },
+  { name: "Python / ML", icon: SiPython, category: "AI & Backend" },
   { name: "Laravel", icon: FaLaravel, category: "Backend" },
-  { name: "Yii Framework", icon: SiYii, category: "Backend" },
-  { name: "Node.js", icon: FaNodeJs, category: "Backend" },
-  { name: "MySQL", icon: SiMysql, category: "Database" },
-  { name: "Bootstrap", icon: SiBootstrap, category: "Frontend" },
 ];
 
 export const experienceData = [
   {
-    company: "Indah Logistic",
+    company: "Indah Logistic & Josal",
     position: "Fullstack Developer",
     duration: "June 2025 - Present",
-    description: "Berpengalaman menangani frontend & backend, arsitektur sistem, debugging, integrasi API enterprise, dan penerapan machine learning dalam lingkungan kerja profesional.",
-    technologies: ["PHP", "Next.js", "MySQL", "API Integration"],
+    description: "Mengembangkan dan memelihara ekosistem platform enterprise skala besar untuk logistik dan on-demand transportation (Indah Logistik, Indah Expres, Josal Ride/Delivery) berbasis Yii2, MySQL, high-performance caching (Memcache), queue workers, automated cron jobs, Grafana system metrics monitoring, dan arsitektur load balancing.",
+    technologies: ["Yii2", "MySQL", "Memcache", "Queue & Cron", "Grafana", "Load Balancer"],
   },
 ];
 
@@ -109,35 +109,35 @@ export const educationData = [
 export const projects = [
   {
     num: "01",
-    category: "Fullstack / Logistics",
-    title: "Sistem Informasi Koperasi Desa",
+    category: "Enterprise System",
+    title: "Indah Logistic Core System",
     description:
-      "Sistem Informasi Koperasi Desa/Kelurahan berbasis web yang dibangun menggunakan Yii Framework, Bootstrap, dan JavaScript. Menampilkan informasi layanan koperasi secara interaktif dan responsif, termasuk modul simpan pinjam, logistik, berita, dan transparansi.",
-    stack: ["Yii PHP Framework", "JavaScript", "Bootstrap", "MySQL"],
-    image: "/assets/work/thumb1.png",
-    live: "",
+      "Pengembangan dan optimasi platform operasional logistik nasional enterprise. Menangani pemrosesan data pengiriman skala masif dengan Yii2 Framework, relasi database MySQL berkinerja tinggi, Memcache untuk respons latensi rendah, Queue & automated Cron jobs, serta pemantauan sistem secara real-time melalui Grafana di balik Load Balancer.",
+    stack: ["Yii2", "MySQL", "Memcache", "Queue & Cron", "Grafana", "Load Balancer"],
+    image: "/assets/work/indahlogistik.png",
+    live: "https://indahlogistik.co.id/site/login",
     github: "https://github.com/Vannnsss",
   },
   {
     num: "02",
-    category: "Fullstack Web & AI",
-    title: "Deteksi Gangguan Gastrointestinal (ML)",
+    category: "Logistics Platform",
+    title: "Indah Expres Web Platform",
     description:
-      "Website cerdas untuk mendeteksi gangguan pencernaan seperti gastritis, GERD, dan tukak lambung. Mengintegrasikan backend PHP Native, Flask Python API, dan model Machine Learning agar pasien dapat melakukan self-check sebelum konsultasi medis.",
-    stack: ["Flask Python", "Machine Learning", "PHP", "Responsive UI"],
-    image: "/assets/work/thumb2.png",
-    live: "",
+      "Pengembangan portal layanan ekspres terpadu untuk pelanggan dan operasional armada. Mengimplementasikan arsitektur backend yang scalable dengan antrean pemrosesan otomatis (Queue worker), penjadwalan sistem (Cron), caching layer terdistribusi, serta integrasi pemantauan performa infrastruktur server.",
+    stack: ["Yii2", "MySQL", "Memcache", "Queue Worker", "Load Balancer", "Bootstrap"],
+    image: "/assets/work/indahexpres.jpeg",
+    live: "https://indahexpres.co.id/",
     github: "https://github.com/Vannnsss",
   },
   {
     num: "03",
-    category: "Modern Web / Portfolio",
-    title: "Personal Engineering Portfolio",
+    category: "Ride-Hailing & On-Demand Service",
+    title: "Josal Ride & Delivery Platform",
     description:
-      "Portfolio interaktif bertema cosmic antarmuka modern, dibangun menggunakan Next.js App Router, Tailwind CSS, dan Framer Motion. Mengutamakan performa, animasi fluid 60fps, responsivitas, dan estetika dark cosmic visual.",
-    stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    image: "/assets/work/thumb3.png",
-    live: "https://ivanseptaadipratama.vercel.app/",
+      "Pengembangan platform transportasi online dan layanan on-demand (ride-hailing, kurir pengiriman, dan trucking) terpadu. Membangun backend tangguh yang menangani alokasi order pengemudi, pemantauan status pengantaran, queue processing untuk lonjakan transaksi, serta pemantauan latensi server via Grafana di balik Load Balancer.",
+    stack: ["Yii2", "MySQL", "Memcache", "Queue Worker", "Cron Automation", "Grafana"],
+    image: "/assets/work/josal.jpg",
+    live: "https://josal.co.id/",
     github: "https://github.com/Vannnsss",
   },
 ];
