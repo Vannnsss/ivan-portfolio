@@ -1,32 +1,26 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
 import Header from "@/components/Header";
-import StairTransition from "@/components/StairTransition";
-import PageTransition from "@/components/PageTransition";
-
-// Tambahkan ThemeProvider
-import { ThemeProvider } from "@/components/ui/ThemeContext";
+import CosmicBackground from "@/components/CosmicBackground";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 export const metadata = {
-  metadataBase: new URL('https://ivanseptaadipratama.vercel.app'),
+  metadataBase: new URL("https://ivanseptaadipratama.vercel.app"),
   title: {
-    default: 'Ivan Septa Adi Pratama | Fullstack Developer',
-    template: '%s | Ivan Septa Adi Pratama',
+    default: "Ivan Septa Adi Pratama | Fullstack Developer",
+    template: "%s | Ivan Septa Adi Pratama",
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
-  manifest: '/manifest.json',
+  manifest: "/manifest.json",
 };
-
 
 export default function RootLayout({
   children,
@@ -34,16 +28,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* class untuk toggle dark/light mode */}
-      <body className={`${jetbrainsMono.variable} antialiased bg-white text-black dark:bg-[#0f0f0f] dark:text-white`}>
-        <ThemeProvider>
-          <Header />
-          <StairTransition />
-          <PageTransition>
-            {children}
-          </PageTransition>
-        </ThemeProvider>
+    <html lang="en" className="dark scroll-smooth">
+      <body
+        className={`${jetbrainsMono.variable} antialiased bg-[#040409] text-[#f2f5f9] min-h-screen relative selection:bg-cyan-500/30 selection:text-cyan-200`}
+      >
+        {/* Animated Cosmic Background (Canvas 2D Starfield + Accretion Disk / Black Hole) */}
+        <CosmicBackground />
+
+        {/* Global Cosmic Header */}
+        <Header />
+
+        {/* Main Content Layer */}
+        <main className="relative z-10 w-full overflow-hidden">
+          {children}
+        </main>
       </body>
     </html>
   );

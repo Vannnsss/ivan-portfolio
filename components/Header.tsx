@@ -1,50 +1,58 @@
-import React from "react"
-import Link from "next/link"
-import { Button } from "./ui/button"
+"use client";
 
+import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
+import { Button } from "./ui/button";
 
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
 
-const Header = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="py-8 xl:py-12 text-primary">
-      <div className="container mx-auto flex justify-between items-center">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "py-4 bg-[#040409]/80 backdrop-blur-md border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
+          : "py-6 bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+        {/* Cosmic Logo */}
+        <a href="#" className="group flex items-center gap-1.5 focus:outline-none">
+          <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white group-hover:text-accent transition-colors duration-200">
+            Ivan
+          </span>
+          <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_#00d7ff] inline-block animate-pulse" />
+        </a>
 
-        {/* logo */}
-
-        <Link href="/">
-        <h1 className="text-4xl font-semibold text-accent">
-          Ivan<span className="text-accent">.</span>
-        </h1>
-        </Link>
-
-        {/* navbar */}
-        <div className="hidden xl:flex items-center gap-8 text-md ">
+        {/* Desktop Navigation */}
+        <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/contact" className="no-underline">
+          <a href="#contact" className="no-underline">
             <Button
-              className="bg-accent-foreground text-accent border-2 border-accent
-                        hover:bg-accent hover:text-accent-foreground hover:border-primary
-                        dark:bg-gray-700 dark:text-black dark:bg-accent-dark
-                        transition-colors duration-300 dark:border-white "
+              variant="outline"
+              size="sm"
+              className="rounded-full border-cyan-500/40 text-accent bg-cyan-950/20 hover:bg-accent hover:text-black hover:border-accent hover:shadow-[0_0_20px_rgba(0,215,255,0.4)] transition-all duration-300 font-medium px-5"
             >
-              Hire me
+              Contact Me
             </Button>
-
-
-          </Link>
+          </a>
         </div>
 
-        {/* mobile nav */}
-
+        {/* Mobile Nav */}
         <div className="xl:hidden">
           <MobileNav />
         </div>
-
       </div>
     </header>
   );
-};
-
-export default Header
+}
