@@ -20,7 +20,7 @@ export default function SkillsSection() {
             <span className="text-xs uppercase tracking-widest text-accent font-semibold block mb-2">
               Capabilities
             </span>
-            <h2 className="text-gradient">Technical Arsenal</h2>
+            <h2 className="text-gradient">Technical</h2>
             <div className="w-16 h-1 bg-gradient-to-r from-accent to-purple-500 mx-auto mt-4 rounded-full" />
             <p className="text-muted-foreground text-sm sm:text-base mt-4 font-mono">
               Teknologi modern dan framework handal yang saya gunakan dalam membangun aplikasi web responsif, scalable, dan cerdas.
