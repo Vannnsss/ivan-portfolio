@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperType } from "swiper"; // ✅ TYPE IMPORT
+import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
@@ -18,54 +17,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import WorkSliderBtns from "@/components/ui/WorkSliderBtns";
-
-const projects = [
-  {
-    num: "01",
-    category: "Frontend",
-    title: "Project 1",
-    description:
-      "Sistem Informasi Koperasi Desa/Kelurahan berbasis web yang dibangun menggunakan Yii Framework, Bootstrap, dan JavaScript. Menampilkan informasi layanan koperasi secara interaktif dan responsif, termasuk modul simpan pinjam, logistik, berita, dan laporan transparansi. Desain modern dan user-friendly memudahkan masyarakat dalam mengakses informasi dan layanan yang tersedia.",
-    stack: [
-      { name: "Yii PHP Framework" },
-      { name: "JavaScript" },
-      { name: "Bootstrap" },
-    ],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "https://github.com/Vannnsss",
-  },
-  {
-    num: "02",
-    category: "Fullstack Web",
-    title: "Project 2",
-    description:
-      "Website ini dirancang untuk mendeteksi gangguan gastrointestinal seperti gastritis, GERD, dan tukak lambung. Menggunakan PHP Native, Flask Python, dan Machine Learning, pengguna cukup memasukkan gejala untuk mendapatkan prediksi penyakit secara cepat. Cocok untuk deteksi awal sebelum konsultasi medis.",
-    stack: [
-      { name: "PHP Native" },
-      { name: "Flask Python" },
-      { name: "Machine Learning" },
-    ],
-    image: "/assets/work/thumb2.png",
-    live: "",
-    github: "https://github.com/Vannnsss",
-  },
-  {
-    num: "03",
-    category: "Portfolio",
-    title: "Project 3",
-    description:
-      "Website ini merupakan portofolio pribadi yang menampilkan profil, pengalaman, dan proyek yang telah diselesaikan. Dibangun menggunakan Next.js, Tailwind CSS, dan Node.js, situs ini dirancang dengan antarmuka modern, ringan, dan responsif. Pengunjung dapat melihat informasi lengkap, mengunduh CV, serta menghubungi langsung melalui berbagai platform.",
-    stack: [
-      { name: "Next Js" },
-      { name: "Tailwind CSS" },
-      { name: "Node Js" },
-    ],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "https://github.com/Vannnsss",
-  },
-];
+import { projects } from "@/lib/data";
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
@@ -80,62 +32,81 @@ const Work = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 0.2, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-24"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           {/* LEFT CONTENT */}
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              <div className="text-8xl leading-none font-extrabold text-outline text-dark">
+            <div className="flex flex-col gap-5">
+              <div className="text-8xl leading-none font-extrabold text-outline text-white/20 font-mono">
                 {project.num}
               </div>
-              <h2 className="text-[42px] font-bold leading-none text-dark group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+              <span className="text-xs font-mono uppercase tracking-widest text-accent">
+                {project.category}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold leading-tight text-white transition-all duration-300">
+                {project.title}
               </h2>
-              <p className="text-dark">{project.description}</p>
-              <ul className="flex gap-4 flex-wrap">
+              <p className="text-muted-foreground font-mono text-sm leading-relaxed">
+                {project.description}
+              </p>
+
+              {/* Stack tags */}
+              <ul className="flex gap-2 flex-wrap pt-2">
                 {project.stack.map((item, index) => (
-                  <li key={index} className="text-xl text-accent">
-                    {item.name}
-                    {index !== project.stack.length - 1 && ","}
+                  <li
+                    key={index}
+                    className="text-xs font-mono px-2.5 py-1 rounded bg-secondary/60 text-cyan-200 border border-white/5"
+                  >
+                    {item}
                   </li>
                 ))}
               </ul>
-              <div className="border border-white/20"></div>
 
-              <div className="flex items-center gap-10">
-                <Link href={project.live} passHref>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <div className="w-[70px] h-[70px] rounded-full bg-black/10 flex justify-center items-center group cursor-pointer">
-                          <BsArrowUpRight className="text-dark text-3xl group-hover:text-accent" />
-                        </div>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live Project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+              <div className="border-t border-white/10 my-2"></div>
 
-                <Link href={project.github} passHref>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <div className="w-[70px] h-[70px] rounded-full bg-black/10 flex justify-center items-center group cursor-pointer">
-                          <BsGithub className="text-dark text-3xl group-hover:text-accent" />
-                        </div>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>GitHub Repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+              {/* Action buttons */}
+              <div className="flex items-center gap-4">
+                {project.live ? (
+                  <Link href={project.live} target="_blank" rel="noopener noreferrer">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="w-[54px] h-[54px] rounded-full bg-accent text-black flex justify-center items-center group cursor-pointer hover:bg-cyan-300 transition-colors">
+                            <BsArrowUpRight className="text-2xl" />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="font-mono text-xs">Live System</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                ) : (
+                  <span className="text-xs font-mono text-muted-foreground bg-white/5 px-3 py-2 rounded-xl border border-white/5">
+                    Production Internal
+                  </span>
+                )}
+
+                {project.github && (
+                  <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="w-[54px] h-[54px] rounded-full bg-secondary/40 border border-white/10 flex justify-center items-center group cursor-pointer hover:border-accent hover:text-accent transition-colors">
+                            <BsGithub className="text-white text-2xl group-hover:text-accent" />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="font-mono text-xs">GitHub Repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -145,28 +116,26 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[520px] mb-12"
+              className="xl:h-[480px] mb-8"
               onSlideChange={handleSlideChange}
             >
-              {projects.map((project, index) => (
+              {projects.map((item, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={project.image}
-                        fill
-                        className="object-fill"
-                        alt={`Slide ${index + 1}`}
-                      />
-                    </div>
+                  <div className="h-[360px] sm:h-[440px] relative rounded-3xl overflow-hidden border border-border/80 bg-black/40">
+                    <Image
+                      src={item.image}
+                      fill
+                      className="object-cover object-top"
+                      alt={item.title}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#070814] via-transparent to-transparent opacity-80" />
                   </div>
                 </SwiperSlide>
               ))}
               <WorkSliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-[#27272c] hover:bg-accent text-white text-[22px] bg-dark rounded-full w-11 h-11 flex items-center justify-center cursor-pointer"
-                iconsStyles="text-xl"
+                containerStyles="flex gap-2 absolute right-0 bottom-4 z-20 justify-end"
+                btnStyles="bg-secondary/80 hover:bg-accent text-white hover:text-black rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transition-colors border border-white/10"
+                iconsStyles="text-lg"
               />
             </Swiper>
           </div>

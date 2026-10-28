@@ -4,15 +4,33 @@ import React from "react";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/lib/data";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
-import { FiUser, FiMail, FiPhone, FiMapPin, FiAward, FiCheckCircle } from "react-icons/fi";
+import { FiUser, FiMail, FiPhone, FiMapPin, FiAward, FiCheckCircle, FiServer, FiLayers, FiDatabase } from "react-icons/fi";
 
 const attributes = [
   { label: "Full Name", value: personalInfo.name, icon: FiUser },
+  { label: "Current Role", value: "Software Engineer (PT Indah Logistik)", icon: FiAward },
   { label: "Email Address", value: personalInfo.email, icon: FiMail },
   { label: "Direct Phone", value: personalInfo.phone, icon: FiPhone },
   { label: "Location", value: personalInfo.location, icon: FiMapPin },
-  { label: "Field Experience", value: personalInfo.experienceYears, icon: FiAward },
-  { label: "Availability", value: "Open for Opportunities", icon: FiCheckCircle },
+  { label: "Core Focus", value: "Fullstack Web & Linux SysAdmin", icon: FiCheckCircle },
+];
+
+const coreHighlights = [
+  {
+    icon: FiLayers,
+    title: "Fullstack & API Engineering",
+    desc: "Pengembangan backend PHP/Yii2 teruji, RESTful API, integrasi payment & shipping, serta frontend interaktif.",
+  },
+  {
+    icon: FiDatabase,
+    title: "Data Integrity & Performance",
+    desc: "Perancangan skema relasional MySQL, transaksi data multi-toko, penanganan constraint unik, dan optimasi query.",
+  },
+  {
+    icon: FiServer,
+    title: "Linux & Production Operations",
+    desc: "Pengelolaan server Linux via SSH, virtualisasi Proxmox VE, konfigurasi Nginx/Cloudflare, dan minimal downtime.",
+  },
 ];
 
 export default function AboutSection() {
@@ -24,7 +42,7 @@ export default function AboutSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-14">
@@ -38,20 +56,32 @@ export default function AboutSection() {
           {/* Editorial Card */}
           <motion.div
             variants={fadeInUp}
-            className="cosmic-glass rounded-2xl p-6 sm:p-10 border border-border/80 shadow-2xl relative overflow-hidden"
+            className="cosmic-glass rounded-3xl p-6 sm:p-10 border border-border/80 shadow-2xl relative overflow-hidden mb-8"
           >
             {/* Subtle glow border corner */}
-            <div className="absolute top-0 right-0 w-36 h-36 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-44 h-44 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Building Robust Web Applications & Intelligent Systems
+            <div className="inline-block px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-400/20 text-cyan-300 text-xs font-mono mb-4">
+              Fullstack Developer | Linux Server & System Administration
+            </div>
+
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-5">
+              Bridging Applications, Databases, and Server Infrastructure
             </h3>
 
-            <p className="text-muted-foreground leading-relaxed text-base sm:text-lg mb-8 font-mono">
+            <p className="text-muted-foreground leading-relaxed text-base sm:text-lg mb-6 font-mono">
               {personalInfo.aboutDescription}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-border/40">
+            {/* Engineering Mindset Callout */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-cyan-950/20 border border-cyan-500/20 mb-8">
+              <p className="text-sm text-cyan-200/90 font-mono leading-relaxed">
+                <span className="text-accent font-semibold">Karakter Teknis:</span> Developer yang memahami hubungan erat antara logika aplikasi, relasi database, integrasi API, infrastruktur server, dan kebutuhan operasional bisnis — bukan sekadar berfokus pada pembuatan tampilan antarmuka.
+              </p>
+            </div>
+
+            {/* Quick Details Attributes */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-6 border-t border-border/40">
               {attributes.map((attr, index) => {
                 const Icon = attr.icon;
                 return (
@@ -60,13 +90,13 @@ export default function AboutSection() {
                     className="p-3.5 rounded-xl bg-secondary/30 border border-white/5 flex items-center gap-3.5 hover:border-accent/30 transition-colors"
                   >
                     <div className="w-9 h-9 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0">
-                      <Icon className="text-lg" />
+                      <Icon className="text-base" />
                     </div>
                     <div className="overflow-hidden">
-                      <span className="text-xs text-muted-foreground block">
+                      <span className="text-[11px] text-muted-foreground block font-mono">
                         {attr.label}
                       </span>
-                      <span className="text-sm font-semibold text-white truncate block">
+                      <span className="text-xs sm:text-sm font-semibold text-white truncate block">
                         {attr.value}
                       </span>
                     </div>
@@ -75,9 +105,31 @@ export default function AboutSection() {
               })}
             </div>
           </motion.div>
+
+          {/* Core Highlights Pillars */}
+          <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {coreHighlights.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="cosmic-glass cosmic-glass-hover rounded-2xl p-6 border border-border/70 relative group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-accent group-hover:text-black transition-all duration-300">
+                    <Icon className="text-xl" />
+                  </div>
+                  <h4 className="text-base font-bold text-white mb-2 font-mono group-hover:text-accent transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground font-mono leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </motion.div>
         </motion.div>
       </div>
     </section>
   );
 }
-

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { projects } from "@/lib/data";
 import { fadeInUp, staggerContainer, scaleUp } from "@/lib/animations";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { FiFolder } from "react-icons/fi";
 
 export default function ProjectsSection() {
   return (
@@ -20,17 +21,17 @@ export default function ProjectsSection() {
           {/* Section Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16 max-w-2xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-accent font-semibold block mb-2">
-              Portfolio
+              Portfolio & Engineering Showcase
             </span>
-            <h2 className="text-gradient">Featured Work</h2>
+            <h2 className="text-gradient">Featured Projects & Systems</h2>
             <div className="w-16 h-1 bg-gradient-to-r from-accent to-purple-500 mx-auto mt-4 rounded-full" />
             <p className="text-muted-foreground text-sm sm:text-base mt-4 font-mono">
-              Showcase aplikasi web dan implementasi machine learning yang telah saya bangun dengan fokus pada skalabilitas, desain interaktif, dan performa.
+              Eksplorasi sistem produksi nyata: ekosistem logistik nasional (Indah Logistik, Indah Expres, Josal), marketplace  (IndahMall), migrasi infrastruktur Linux & Proxmox, sistem presensi pengenalan wajah, serta arsitektur live commerce real-time.
             </p>
           </motion.div>
 
           {/* Projects Editorial Cosmic Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {projects.map((item, index) => (
               <motion.div
                 key={index}
@@ -52,22 +53,39 @@ export default function ProjectsSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#070814] via-transparent to-transparent opacity-80" />
 
                     {/* Project Number Badge */}
-                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono text-accent">
+                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-xs font-mono text-accent">
                       {item.num}
                     </div>
 
                     {/* Category Badge */}
-                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-cyan-950/70 backdrop-blur-md border border-cyan-400/30 text-[11px] font-mono text-cyan-300">
+                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-cyan-950/80 backdrop-blur-md border border-cyan-400/30 text-[11px] font-mono text-cyan-300">
                       {item.category}
                     </div>
                   </div>
 
                   {/* Body Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors duration-200 mb-3">
+                    <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors duration-200 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed font-mono line-clamp-4 mb-6">
+
+                    {/* Repositories Tagging */}
+                    {item.repositories && item.repositories.length > 0 && (
+                      <div className="flex items-center gap-1.5 flex-wrap mb-3">
+                        <FiFolder className="text-xs text-accent" />
+                        <span className="text-[11px] font-mono text-muted-foreground">Repos:</span>
+                        {item.repositories.map((repo, rIdx) => (
+                          <span
+                            key={rIdx}
+                            className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/40 text-cyan-300 border border-cyan-500/20"
+                          >
+                            {repo}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-mono line-clamp-4 mb-4">
                       {item.description}
                     </p>
                   </div>
@@ -76,11 +94,11 @@ export default function ProjectsSection() {
                 {/* Footer with Stack and Actions */}
                 <div className="px-6 pb-6 pt-2 border-t border-white/5 mt-auto">
                   {/* Tech stack badges */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1.5 mb-5">
                     {item.stack.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="text-xs font-mono px-2.5 py-1 rounded-md bg-secondary/60 text-muted-foreground border border-white/5"
+                        className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-secondary/60 text-muted-foreground border border-white/5"
                       >
                         {tech}
                       </span>
@@ -101,7 +119,7 @@ export default function ProjectsSection() {
                       </a>
                     ) : (
                       <div className="flex-1 py-2 px-3 rounded-xl bg-white/5 text-muted-foreground/60 text-xs text-center font-mono">
-                        Internal / Demo
+                        Internal Production
                       </div>
                     )}
 
@@ -126,4 +144,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-

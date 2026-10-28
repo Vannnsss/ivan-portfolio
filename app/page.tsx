@@ -8,28 +8,29 @@ import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {
-  title: "Ivan Septa Adi Pratama | Fullstack Developer",
+  title: "Ivan Septa Adi Pratama | Fullstack Developer & Linux System Administrator",
   description:
-    "Portofolio Pribadi Ivan Septa Adi Pratama — Fullstack Developer dengan keahlian Next.js, React, Laravel, Yii, Python, dan Machine Learning.",
+    "Portofolio Profesional Ivan Septa Adi Pratama — Fullstack Developer & Linux System Administrator di PT Indah Logistik dengan fokus PHP, Yii2, MySQL, JavaScript, Linux, Proxmox, dan Machine Learning.",
   verification: {
     google: "mrcmxWAQHOBc70F_piZ40RGOCtut4qWXTaorFQG5Hh8",
   },
   keywords: [
     "Ivan Septa Adi Pratama",
-    "Portofolio Web Developer",
     "Fullstack Developer",
+    "Linux System Administrator",
+    "PT Indah Logistik",
+    "PHP Yii2",
+    "MySQL",
+    "Proxmox",
     "Python",
-    "Php Laravel",
-    "Php Yii",
-    "React Developer",
-    "Next.js",
     "Machine Learning",
+    "LiveKit",
   ],
   robots: "index, follow",
   openGraph: {
-    title: "Ivan Septa Adi Pratama | Fullstack Developer",
+    title: "Ivan Septa Adi Pratama | Fullstack Developer & Linux System Administrator",
     description:
-      "Portofolio Pribadi Ivan Septa Adi Pratama — Fullstack Developer dengan keahlian Next.js, React, PHP Laravel, Yii, Python, dan Machine Learning.",
+      "Portofolio Profesional Ivan Septa Adi Pratama — Fullstack Developer & Linux System Administrator di PT Indah Logistik.",
     url: "https://ivanseptaadipratama.vercel.app/",
     images: [
       {
@@ -42,9 +43,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ivan Septa Adi Pratama | Fullstack Developer",
+    title: "Ivan Septa Adi Pratama | Fullstack Developer & Linux System Administrator",
     description:
-      "Fullstack Web Developer yang fokus pada Next.js, Yii, Laravel dan Machine Learning.",
+      "Software Engineer di PT Indah Logistik yang fokus pada Fullstack Web (PHP/Yii2), Server Linux, Proxmox, dan AI.",
     images: ["/assets/ivan.jpeg"],
   },
 };

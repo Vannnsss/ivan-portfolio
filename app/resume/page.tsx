@@ -1,240 +1,286 @@
 "use client";
 
-import { FaJs, FaReact, FaNodeJs, FaLaravel } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs ,SiYii, SiBootstrap} from "react-icons/si";
+import { FaJs, FaServer, FaTerminal } from "react-icons/fa";
+import { SiPhp, SiYii, SiMysql, SiLinux, SiProxmox, SiNginx, SiGitlab, SiPython, SiFirebase } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { ScrollArea} from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import { personalInfo } from "@/lib/data";
 
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title:"My Experience",
-  description: "Berpengalaman sebagai frontend dan backend developer, menangani debugging, integrasi API, dan penerapan machine learning dalam lingkungan kerja profesional.",
+  title: "My Experience",
+  description: "Pengalaman di lingkungan kerja produksi menangani aplikasi web end-to-end, integrasi API perbankan dan logistik, optimasi relasi database MySQL, serta administrasi server Linux dan Proxmox.",
   items: [
     {
-      company:"Indah Logistic",
-      position: "Fullstack Developer",
-      duration: "June 2025 - Present"
+      company: "PT Indah Logistik",
+      position: "Software Engineer / Fullstack Developer",
+      duration: "Juni 2025 - Present"
     }
   ]
 };
 
 const about = {
-  title : " About me",
-  description : "Lulusan Informatika yang antusias membangun aplikasi web modern, menyukai tantangan teknis, dan terus belajar teknologi terbaru secara mandiri.",
+  title: "About Me",
+  description: personalInfo.aboutDescription,
   info: [
     {
-      fieldName : "Name", 
-      fieldValue : "Ivan Septa Adi Pratama"
+      fieldName: "Name", 
+      fieldValue: personalInfo.name
     },
     {
-      fieldName : "Phone", 
-      fieldValue : "085230217420"
+      fieldName: "Role", 
+      fieldValue: personalInfo.role
     },
     {
-      fieldName : "Experience", 
-      fieldValue : "two years of professional experience."
+      fieldName: "Phone", 
+      fieldValue: personalInfo.phone
     },
     {
-      fieldName : "Instagram", 
-      fieldValue : "1_vannn"
+      fieldName: "Experience", 
+      fieldValue: personalInfo.experienceYears
     },
     {
-      fieldName : "Linkedin", 
-      fieldValue : "Ivan Septa Adi Pratama"
+      fieldName: "Instagram", 
+      fieldValue: "1_vannn"
     },
     {
-      fieldName : "email", 
-      fieldValue : "ivanseptaa@gmail.com"
+      fieldName: "LinkedIn", 
+      fieldValue: "Ivan Septa Adi Pratama"
+    },
+    {
+      fieldName: "Email", 
+      fieldValue: personalInfo.email
+    },
+    {
+      fieldName: "Location", 
+      fieldValue: personalInfo.location
     },
   ]
 };
 
 const education = {
   icon: "/assets/resume/cap.svg",
-  title:"My Education",
-  description: "Lulusan S1 Informatika dengan fokus pada pengembangan web, machine learning, struktur data, algoritma, dan pemrograman berbasis proyek.",
+  title: "My Education",
+  description: "Latar belakang pendidikan formal dan riset komputasi lanjutan, berfokus pada machine learning, arsitektur data, dan computer vision.",
   items: [
     {
-      institution:"Pamulang University",
-      degree: "Master of Computer Science",
-      duration: "2025 - On Going"
+      institution: "Universitas Pamulang",
+      degree: "Magister Teknik Informatika (S2)",
+      duration: "2025 - On Going",
+      detail: "Penelitian tesis mengenai efektivitas vaksinasi dengan algoritma XGBoost."
     },
     {
-      institution:"Pamulang University",
-      degree: "Bachelor of Computer Science",
-      duration: "2021 - 2025"
-    },
-    {
-      institution:"Online Course",
-      degree: "Machine Learning",
-      duration: "2024"
-    },
-    {
-      institution:"Online Course",
-      degree: "Programming",
-      duration: "2023"
+      institution: "Universitas Pamulang",
+      degree: "Sarjana Komputer - Teknik Informatika (S1)",
+      duration: "2021 - 2025",
+      detail: "Fokus rekayasa perangkat lunak, database relasional, dan computer vision deteksi wajah."
     },
   ]
 };
 
 const skills = {
-  title: "My Skills",
-  description: "Menguasai Yii, Laravel, MySql, JavaScript, React, Next.js, Node.js, Tailwind CSS, dan Bootstrap untuk pengembangan web modern dan efisien.",
+  title: "My Skills & Tooling",
+  description: "Kombinasi teknologi yang aktif digunakan dalam pekerjaan dan proyek produksi: PHP, Yii2, MySQL, JavaScript, Linux, Proxmox, Git/GitLab, Python, dan real-time stack.",
   skillList: [
     {
-      icon: <SiYii/>,
-      name:"Yii Framework"
+      icon: <SiPhp />,
+      name: "PHP"
     },
     {
-      icon: <SiBootstrap/>,
-      name:"Bootstrap"
+      icon: <SiYii />,
+      name: "Yii2 Framework"
     },
     {
-      icon: <FaJs/>,
-      name:"JavaScript"
+      icon: <SiMysql />,
+      name: "MySQL & Relational Data"
     },
     {
-      icon: <FaReact/>,
-      name:"React"
+      icon: <FaJs />,
+      name: "JavaScript & jQuery"
     },
     {
-      icon: <FaLaravel/>,
-      name:"Laravel"
+      icon: <SiLinux />,
+      name: "Linux Administration"
     },
     {
-      icon: <FaNodeJs/>,
-      name:"Node.Js"
+      icon: <SiProxmox />,
+      name: "Proxmox VE"
     },
     {
-      icon: <SiTailwindcss/>,
-      name:"Tailwind Css"
+      icon: <SiNginx />,
+      name: "Nginx & PHP-FPM"
     },
     {
-      icon: <SiNextdotjs/>,
-      name:"Next.js"
+      icon: <SiGitlab />,
+      name: "Git & GitLab"
+    },
+    {
+      icon: <SiFirebase />,
+      name: "Firebase / Firestore"
+    },
+    {
+      icon: <SiPython />,
+      name: "Python & Flask"
+    },
+    {
+      icon: <FaTerminal />,
+      name: "SSH & Networking"
+    },
+    {
+      icon: <FaServer />,
+      name: "REST API Integration"
     },
   ]
-}
+};
 
-const Resume = () => {
+export default function Resume() {
   return (
     <motion.div
-    initial={{ opacity:0 }}
-    animate={ {
-      opacity:1,
-      transition: {delay: 2.4, duration: 0.4,  ease: "easeIn" },
-    }}
-    className="min-h-[80vh] flex items-center justify-center py-12 xl:py:0"
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 0.2, duration: 0.4, ease: "easeIn" },
+      }}
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-24"
     >
-      <div className="container mx-auto">
-        <Tabs defaultValue="experience"
-        className="flex flex-col xl:flex-row gap-[60px]">
-
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+      <div className="container mx-auto px-4">
+        <Tabs
+          defaultValue="experience"
+          className="flex flex-col xl:flex-row gap-[60px]"
+        >
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-4">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="skills">Skills & Tooling</TabsTrigger>
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
 
           <div className="min-h-[70vh] w-full">
-
+            {/* Experience */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[600px] text-dark mx-auto xl:mx-0">{experience.description}</p>
+                <h3 className="text-3xl sm:text-4xl font-bold text-white">{experience.title}</h3>
+                <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-sm leading-relaxed">
+                  {experience.description}
+                </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {experience.items.map((item, index) => {
-                      return ( 
-                      <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flxe flex-col justify-center items-center lg:items-start gap-1">
-                        <span className="text-accent">{item.duration}</span>
-                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-white text-center lg:text-left">{item.position}</h3>
+                  <ul className="grid grid-cols-1 gap-[20px]">
+                    {experience.items.map((item, index) => (
+                      <li
+                        key={index}
+                        className="bg-secondary/40 border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center lg:items-start gap-2"
+                      >
+                        <span className="text-accent text-xs font-mono">{item.duration}</span>
+                        <h4 className="text-xl font-bold text-white text-center lg:text-left">
+                          {item.position}
+                        </h4>
                         <div className="flex items-center gap-3">
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                          <p className="text-white/60">{item.company}</p>
+                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                          <p className="text-muted-foreground font-mono text-sm">{item.company}</p>
                         </div>
-                      </li> 
-                      );
-                    })}
+                      </li>
+                    ))}
                   </ul>
                 </ScrollArea>
               </div>
             </TabsContent>
 
+            {/* Education */}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="max-w-[600px] text-dark mx-auto xl:mx-0">{education.description}</p>
+                <h3 className="text-3xl sm:text-4xl font-bold text-white">{education.title}</h3>
+                <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-sm leading-relaxed">
+                  {education.description}
+                </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {education.items.map((item, index) => {
-                      return ( 
-                      <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flxe flex-col justify-center items-center lg:items-start gap-1">
-                        <span className="text-accent">{item.duration}</span>
-                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-white text-center lg:text-left">{item.institution}</h3>
-                        <div className="flex items-center gap-3">
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                          <p className="text-white/60">{item.degree}</p>
+                  <ul className="grid grid-cols-1 gap-[20px]">
+                    {education.items.map((item, index) => (
+                      <li
+                        key={index}
+                        className="bg-secondary/40 border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center lg:items-start gap-2"
+                      >
+                        <span className="text-purple-400 text-xs font-mono">{item.duration}</span>
+                        <h4 className="text-lg font-bold text-white text-center lg:text-left">
+                          {item.degree}
+                        </h4>
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                          <p className="text-white/80 font-mono text-sm">{item.institution}</p>
                         </div>
-                      </li> 
-                      );
-                    })}
+                        {item.detail && (
+                          <p className="text-xs text-muted-foreground font-mono mt-1">{item.detail}</p>
+                        )}
+                      </li>
+                    ))}
                   </ul>
                 </ScrollArea>
               </div>
             </TabsContent>
 
+            {/* Skills */}
             <TabsContent value="skills" className="w-full">
               <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-dark mx-auto xl:mx-0">{skills.description}</p>
+                <div className="text-center xl:text-left">
+                  <h3 className="text-3xl sm:text-4xl font-bold text-white">{skills.title}</h3>
+                  <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-sm leading-relaxed mt-2">
+                    {skills.description}
+                  </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.skillList.map((skills, index) => {
-                    return (
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    {skills.skillList.map((skill, index) => (
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent text-white transition-all duration-300">{skills.icon}</div>
+                            <TooltipTrigger className="w-full h-[120px] bg-secondary/30 rounded-2xl flex flex-col justify-center items-center group border border-white/5 hover:border-accent/40 transition-all">
+                              <div className="text-4xl group-hover:text-accent transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                              <span className="text-xs font-mono text-muted-foreground mt-2 group-hover:text-white">
+                                {skill.name}
+                              </span>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p className="text-black capitalize">{skills.name}</p>
+                              <p className="capitalize font-mono">{skill.name}</p>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
                       </li>
-                    );
-                  })}
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+
+            {/* About Me */}
+            <TabsContent value="about" className="w-full text-center xl:text-left">
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-3xl sm:text-4xl font-bold text-white">{about.title}</h3>
+                <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-sm leading-relaxed">
+                  {about.description}
+                </p>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[650px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => (
+                    <li
+                      key={index}
+                      className="bg-secondary/30 border border-white/5 p-4 rounded-xl flex items-center gap-4"
+                    >
+                      <span className="text-muted-foreground text-xs font-mono min-w-[90px]">
+                        {item.fieldName}:
+                      </span>
+                      <span className="text-white text-sm font-semibold truncate font-mono">
+                        {item.fieldValue}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </TabsContent>
-
-            <TabsContent value="about" className="w-full text-center xl:text-left">
-              <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[750px] text-dark mx-auto xl:mx-0">{about.description}</p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-2 max-w-[870px] mx-auto xl:mx-0">{about.info.map((item, index)=> {
-                  return (
-                    <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
-                      <span className="text-dark ">{item.fieldName}</span>
-                      <span className="text-xl text-accent">{item.fieldValue}</span>
-                    </li>
-                  );
-                })}</ul>
-              </div>
-            </TabsContent>
-
           </div>
-
         </Tabs>
       </div>
     </motion.div>
-  )
+  );
 }
-
-export default Resume

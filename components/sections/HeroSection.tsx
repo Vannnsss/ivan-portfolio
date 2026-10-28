@@ -25,7 +25,7 @@ export default function HeroSection() {
             {/* Status Pill Badge */}
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-400/30 bg-cyan-950/30 text-cyan-300 text-xs sm:text-sm font-medium mb-6">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#00d7ff]" />
-              <span>Available for Fullstack & AI Engineering</span>
+              <span>Software Engineer & System Administrator</span>
             </motion.div>
 
             {/* Main Cosmic Headline */}
