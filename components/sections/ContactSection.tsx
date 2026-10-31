@@ -52,23 +52,23 @@ export default function ContactSection() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Direct Contact Cards */}
-            <motion.div variants={fadeInUp} className="lg:col-span-5 space-y-4">
+            <motion.div variants={fadeInUp} className="lg:col-span-5 space-y-3 sm:space-y-4">
               {contactDetails.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <a
                     key={index}
                     href={item.href}
-                    className="cosmic-glass cosmic-glass-hover rounded-2xl p-5 flex items-center gap-4.5 block group"
+                    className="cosmic-glass cosmic-glass-hover rounded-2xl p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4.5 block group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 text-accent flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-accent group-hover:text-black transition-all duration-300">
-                      <Icon className="text-xl" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accent/10 border border-accent/20 text-accent flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-accent group-hover:text-black transition-all duration-300">
+                      <Icon className="text-lg sm:text-xl" />
                     </div>
-                    <div className="overflow-hidden">
-                      <span className="text-[11px] uppercase tracking-wider text-muted-foreground font-mono block">
+                    <div className="overflow-hidden min-w-0">
+                      <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-muted-foreground font-mono block">
                         {item.title} • {item.label}
                       </span>
-                      <span className="text-sm sm:text-base font-semibold text-white group-hover:text-accent transition-colors truncate block">
+                      <span className="text-xs sm:text-base font-semibold text-white group-hover:text-accent transition-colors break-words block">
                         {item.value}
                       </span>
                     </div>
@@ -77,7 +77,7 @@ export default function ContactSection() {
               })}
 
               {/* Status Note */}
-              <div className="p-5 rounded-2xl border border-cyan-500/20 bg-cyan-950/20 text-cyan-200 text-xs sm:text-sm leading-relaxed font-mono">
+              <div className="p-4 sm:p-5 rounded-2xl border border-cyan-500/20 bg-cyan-950/20 text-cyan-200 text-xs sm:text-sm leading-relaxed font-mono">
                 💡 <strong className="text-cyan-300">Fast Response:</strong> Anda juga bisa mengirim pesan langsung via WhatsApp atau Email untuk koordinasi lebih cepat.
               </div>
             </motion.div>
@@ -86,9 +86,9 @@ export default function ContactSection() {
             <motion.div variants={fadeInUp} className="lg:col-span-7">
               <form
                 onSubmit={handleSubmit}
-                className="cosmic-glass rounded-3xl p-6 sm:p-8 border border-border/80 shadow-2xl space-y-4"
+                className="cosmic-glass rounded-3xl p-5 sm:p-8 border border-border/80 shadow-2xl space-y-4"
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-xs font-mono text-muted-foreground mb-1 block">
                       Your Name

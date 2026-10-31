@@ -31,27 +31,27 @@ export default function SkillsSection() {
             </p>
 
             {/* View Switcher */}
-            <div className="inline-flex items-center p-1 rounded-xl bg-secondary/40 border border-white/10 mt-6 gap-1">
+            <div className="inline-flex flex-col sm:flex-row items-stretch sm:items-center p-1.5 sm:p-1 rounded-2xl sm:rounded-xl bg-secondary/40 border border-white/10 mt-6 gap-1.5 sm:gap-1 max-w-full">
               <button
                 onClick={() => setActiveTab("clusters")}
-                className={`px-4 py-2 rounded-lg text-xs font-mono transition-all flex items-center gap-2 cursor-pointer ${
+                className={`px-3.5 sm:px-4 py-2 rounded-xl sm:rounded-lg text-[11px] sm:text-xs font-mono transition-all flex items-center justify-center gap-2 cursor-pointer ${
                   activeTab === "clusters"
                     ? "bg-accent text-black font-semibold shadow-[0_0_15px_rgba(0,215,255,0.4)]"
                     : "text-muted-foreground hover:text-white"
                 }`}
               >
-                <FiList className="text-sm" />
+                <FiList className="text-sm shrink-0" />
                 <span>6 Core Competency Areas</span>
               </button>
               <button
                 onClick={() => setActiveTab("grid")}
-                className={`px-4 py-2 rounded-lg text-xs font-mono transition-all flex items-center gap-2 cursor-pointer ${
+                className={`px-3.5 sm:px-4 py-2 rounded-xl sm:rounded-lg text-[11px] sm:text-xs font-mono transition-all flex items-center justify-center gap-2 cursor-pointer ${
                   activeTab === "grid"
                     ? "bg-accent text-black font-semibold shadow-[0_0_15px_rgba(0,215,255,0.4)]"
                     : "text-muted-foreground hover:text-white"
                 }`}
               >
-                <FiGrid className="text-sm" />
+                <FiGrid className="text-sm shrink-0" />
                 <span>Quick Stack View</span>
               </button>
             </div>
@@ -66,7 +66,7 @@ export default function SkillsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
               >
                 {skillClusters.map((cluster, index) => {
                   const Icon = cluster.icon;
@@ -75,7 +75,7 @@ export default function SkillsSection() {
                       key={index}
                       variants={scaleUp}
                       whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                      className="cosmic-glass cosmic-glass-hover rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-border/80 relative overflow-hidden group"
+                      className="cosmic-glass cosmic-glass-hover rounded-3xl p-5 sm:p-7 flex flex-col justify-between border border-border/80 relative overflow-hidden group"
                     >
                       {/* Top icon and title */}
                       <div>
@@ -134,7 +134,7 @@ export default function SkillsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6"
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-5"
               >
                 {skillsList.map((skill, index) => {
                   const Icon = skill.icon;
@@ -143,17 +143,17 @@ export default function SkillsSection() {
                       key={index}
                       variants={scaleUp}
                       whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                      className="cosmic-glass cosmic-glass-hover rounded-2xl p-6 flex flex-col items-center text-center group cursor-default relative overflow-hidden"
+                      className="cosmic-glass cosmic-glass-hover rounded-2xl p-4 sm:p-6 flex flex-col items-center text-center group cursor-default relative overflow-hidden"
                     >
-                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground/70 font-mono mb-4 px-2 py-0.5 rounded-full bg-white/5 border border-white/5">
+                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground/70 font-mono mb-3 sm:mb-4 px-2 py-0.5 rounded-full bg-white/5 border border-white/5">
                         {skill.category}
                       </div>
 
-                      <div className="text-4xl sm:text-5xl text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-all duration-300 my-2">
+                      <div className="text-3xl sm:text-4xl md:text-5xl text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-all duration-300 my-1 sm:my-2">
                         <Icon />
                       </div>
 
-                      <h3 className="text-sm font-semibold text-white mt-3 group-hover:text-accent transition-colors font-mono">
+                      <h3 className="text-xs sm:text-sm font-semibold text-white mt-2 sm:mt-3 group-hover:text-accent transition-colors font-mono break-words">
                         {skill.name}
                       </h3>
 

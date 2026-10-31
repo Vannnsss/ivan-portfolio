@@ -27,7 +27,7 @@ export default function MobileNav() {
 
       <SheetContent
         side="right"
-        className="w-[300px] sm:w-[350px] bg-[#070814]/95 border-l border-border/80 backdrop-blur-2xl flex flex-col justify-between p-8"
+        className="w-[280px] sm:w-[350px] max-w-[85vw] bg-[#070814]/95 border-l border-border/80 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-8"
       >
         <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
 

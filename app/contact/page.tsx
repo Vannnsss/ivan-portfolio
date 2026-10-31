@@ -80,7 +80,7 @@ const Contact = () => {
           <span className="inline-block px-4 py-1.5 text-xs font-medium tracking-wider uppercase bg-accent/10 text-accent rounded-full mb-4">
             Get in Touch
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground bg-clip-text text-transparent">
             Let's Work Together
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
@@ -88,7 +88,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12">
+        <div className="flex flex-col xl:flex-row gap-6 sm:gap-8 xl:gap-12">
           {/* Contact Form */}
           <motion.div
             variants={staggerContainer}
@@ -103,9 +103,9 @@ const Contact = () => {
               {/* Glow effect behind card */}
               <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 via-accent/10 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-              <div className="relative rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm p-8 md:p-10 shadow-xl shadow-black/5">
+              <div className="relative rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm p-5 sm:p-8 md:p-10 shadow-xl shadow-black/5">
                 <form className="flex flex-col gap-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <motion.div variants={fadeInUp}>
                       <label className="text-sm font-medium text-muted-foreground mb-1.5 block">
                         First Name

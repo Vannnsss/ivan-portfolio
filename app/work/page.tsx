@@ -40,26 +40,26 @@ const Work = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           {/* LEFT CONTENT */}
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-5">
-              <div className="text-8xl leading-none font-extrabold text-outline text-white/20 font-mono">
+            <div className="flex flex-col gap-4 sm:gap-5">
+              <div className="text-5xl sm:text-8xl leading-none font-extrabold text-outline text-white/20 font-mono">
                 {project.num}
               </div>
               <span className="text-xs font-mono uppercase tracking-widest text-accent">
                 {project.category}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold leading-tight text-white transition-all duration-300">
+              <h2 className="text-xl sm:text-3xl font-bold leading-snug text-white transition-all duration-300">
                 {project.title}
               </h2>
-              <p className="text-muted-foreground font-mono text-sm leading-relaxed">
+              <p className="text-muted-foreground font-mono text-xs sm:text-sm leading-relaxed">
                 {project.description}
               </p>
 
               {/* Stack tags */}
-              <ul className="flex gap-2 flex-wrap pt-2">
+              <ul className="flex gap-1.5 sm:gap-2 flex-wrap pt-2">
                 {project.stack.map((item, index) => (
                   <li
                     key={index}
-                    className="text-xs font-mono px-2.5 py-1 rounded bg-secondary/60 text-cyan-200 border border-white/5"
+                    className="text-[11px] sm:text-xs font-mono px-2 sm:px-2.5 py-0.5 sm:py-1 rounded bg-secondary/60 text-cyan-200 border border-white/5"
                   >
                     {item}
                   </li>
@@ -69,14 +69,14 @@ const Work = () => {
               <div className="border-t border-white/10 my-2"></div>
 
               {/* Action buttons */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 {project.live ? (
                   <Link href={project.live} target="_blank" rel="noopener noreferrer">
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <div className="w-[54px] h-[54px] rounded-full bg-accent text-black flex justify-center items-center group cursor-pointer hover:bg-cyan-300 transition-colors">
-                            <BsArrowUpRight className="text-2xl" />
+                          <div className="w-11 h-11 sm:w-[54px] sm:h-[54px] rounded-full bg-accent text-black flex justify-center items-center group cursor-pointer hover:bg-cyan-300 transition-colors">
+                            <BsArrowUpRight className="text-xl sm:text-2xl" />
                           </div>
                         </TooltipTrigger>
                         <TooltipContent>
@@ -96,8 +96,8 @@ const Work = () => {
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <div className="w-[54px] h-[54px] rounded-full bg-secondary/40 border border-white/10 flex justify-center items-center group cursor-pointer hover:border-accent hover:text-accent transition-colors">
-                            <BsGithub className="text-white text-2xl group-hover:text-accent" />
+                          <div className="w-11 h-11 sm:w-[54px] sm:h-[54px] rounded-full bg-secondary/40 border border-white/10 flex justify-center items-center group cursor-pointer hover:border-accent hover:text-accent transition-colors">
+                            <BsGithub className="text-white text-xl sm:text-2xl group-hover:text-accent" />
                           </div>
                         </TooltipTrigger>
                         <TooltipContent>
@@ -112,16 +112,16 @@ const Work = () => {
           </div>
 
           {/* RIGHT CONTENT (SLIDER) */}
-          <div className="w-full xl:w-[50%]">
+          <div className="w-full xl:w-[50%] mb-8 xl:mb-0">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[480px] mb-8"
+              className="xl:h-[480px] mb-4 sm:mb-8"
               onSlideChange={handleSlideChange}
             >
               {projects.map((item, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="h-[360px] sm:h-[440px] relative rounded-3xl overflow-hidden border border-border/80 bg-black/40">
+                  <div className="h-[260px] sm:h-[380px] xl:h-[440px] relative rounded-3xl overflow-hidden border border-border/80 bg-black/40">
                     <Image
                       src={item.image}
                       fill
@@ -133,9 +133,9 @@ const Work = () => {
                 </SwiperSlide>
               ))}
               <WorkSliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-4 z-20 justify-end"
-                btnStyles="bg-secondary/80 hover:bg-accent text-white hover:text-black rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transition-colors border border-white/10"
-                iconsStyles="text-lg"
+                containerStyles="flex gap-2 absolute right-0 bottom-4 z-20 justify-end pr-2"
+                btnStyles="bg-secondary/80 hover:bg-accent text-white hover:text-black rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center cursor-pointer transition-colors border border-white/10"
+                iconsStyles="text-base sm:text-lg"
               />
             </Swiper>
           </div>

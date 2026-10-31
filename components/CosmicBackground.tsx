@@ -128,31 +128,28 @@ export default function CosmicBackground() {
       {/* Dynamic Starfield Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
-      {/* Hero Cosmic Black Hole & Accretion Glow Simulation */}
-      <div className="absolute top-[18%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[520px] md:w-[720px] xl:w-[960px] aspect-square pointer-events-none">
-        {/* Outer Gravitational Glow */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/10 via-purple-600/15 to-transparent blur-[80px] sm:blur-[120px] animate-cosmic-pulse" />
+      {/* Hero Cosmic Atmospheric Nebula Glow */}
+      <div className="absolute top-[22%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[500px] md:w-[650px] xl:w-[800px] aspect-square pointer-events-none">
+        {/* Soft Radial Ambient Nebula Glow */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/15 via-purple-600/10 to-transparent blur-[90px] sm:blur-[130px] animate-cosmic-pulse opacity-75" />
 
-        {/* Accretion Disk Outer Ring */}
+        {/* Accretion Disk Subtle Outer Ring */}
         <div
-          className="absolute inset-[15%] rounded-full border border-cyan-400/20 blur-[1px] animate-spin-slow opacity-60"
+          className="absolute inset-[15%] rounded-full border border-cyan-400/15 blur-[1px] animate-spin-slow opacity-40"
           style={{
             background:
-              "radial-gradient(circle, transparent 58%, rgba(0, 215, 255, 0.08) 65%, rgba(168, 85, 247, 0.12) 75%, transparent 82%)",
+              "radial-gradient(circle, transparent 60%, rgba(0, 215, 255, 0.05) 68%, rgba(168, 85, 247, 0.08) 78%, transparent 85%)",
           }}
         />
 
-        {/* Accretion Disk Inner Swirl */}
+        {/* Accretion Disk Subtle Inner Swirl */}
         <div
-          className="absolute inset-[24%] rounded-full border border-purple-500/30 blur-[2px] animate-spin-reverse opacity-70"
+          className="absolute inset-[26%] rounded-full border border-purple-500/20 blur-[2px] animate-spin-reverse opacity-50"
           style={{
             background:
-              "radial-gradient(circle, transparent 55%, rgba(0, 229, 255, 0.15) 68%, rgba(139, 92, 246, 0.08) 78%, transparent 85%)",
+              "radial-gradient(circle, transparent 55%, rgba(0, 229, 255, 0.08) 68%, rgba(139, 92, 246, 0.05) 80%, transparent 88%)",
           }}
         />
-
-        {/* Event Horizon (Black Hole Center) */}
-        <div className="absolute inset-[36%] rounded-full bg-[#040409] shadow-[0_0_60px_10px_rgba(0,215,255,0.22),inset_0_0_40px_rgba(0,0,0,1)] border border-cyan-400/30" />
       </div>
 
       {/* Ambient Cosmic Lights throughout the page */}

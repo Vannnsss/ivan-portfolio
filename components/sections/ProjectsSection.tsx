@@ -53,27 +53,27 @@ export default function ProjectsSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#070814] via-transparent to-transparent opacity-80" />
 
                     {/* Project Number Badge */}
-                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-xs font-mono text-accent">
+                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 sm:px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-xs font-mono text-accent">
                       {item.num}
                     </div>
 
                     {/* Category Badge */}
-                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-cyan-950/80 backdrop-blur-md border border-cyan-400/30 text-[11px] font-mono text-cyan-300">
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 max-w-[65%] sm:max-w-[70%] truncate px-2.5 sm:px-3 py-1 rounded-full bg-cyan-950/80 backdrop-blur-md border border-cyan-400/30 text-[10px] sm:text-[11px] font-mono text-cyan-300">
                       {item.category}
                     </div>
                   </div>
 
                   {/* Body Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors duration-200 mb-2">
+                  <div className="p-5 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-accent transition-colors duration-200 mb-2 leading-snug">
                       {item.title}
                     </h3>
 
                     {/* Repositories Tagging */}
                     {item.repositories && item.repositories.length > 0 && (
                       <div className="flex items-center gap-1.5 flex-wrap mb-3">
-                        <FiFolder className="text-xs text-accent" />
-                        <span className="text-[11px] font-mono text-muted-foreground">Repos:</span>
+                        <FiFolder className="text-xs text-accent shrink-0" />
+                        <span className="text-[10px] sm:text-[11px] font-mono text-muted-foreground">Repos:</span>
                         {item.repositories.map((repo, rIdx) => (
                           <span
                             key={rIdx}
@@ -92,13 +92,13 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Footer with Stack and Actions */}
-                <div className="px-6 pb-6 pt-2 border-t border-white/5 mt-auto">
+                <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-2 border-t border-white/5 mt-auto">
                   {/* Tech stack badges */}
-                  <div className="flex flex-wrap gap-1.5 mb-5">
+                  <div className="flex flex-wrap gap-1.5 mb-4 sm:mb-5">
                     {item.stack.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-secondary/60 text-muted-foreground border border-white/5"
+                        className="text-[10px] sm:text-[11px] font-mono px-2 sm:px-2.5 py-0.5 rounded-md bg-secondary/60 text-muted-foreground border border-white/5"
                       >
                         {tech}
                       </span>
@@ -106,7 +106,7 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Action links */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2.5 sm:gap-3">
                     {item.live ? (
                       <a
                         href={item.live}

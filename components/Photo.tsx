@@ -17,11 +17,11 @@ export default function Photo() {
         className="relative flex items-center justify-center"
       >
         {/* Soft Cosmic Backlight Behind Photo */}
-        <div className="absolute w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] xl:w-[440px] xl:h-[440px] rounded-full bg-gradient-to-tr from-cyan-500/20 via-purple-500/20 to-blue-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] xl:w-[350px] xl:h-[350px] rounded-full bg-gradient-to-tr from-cyan-500/20 via-purple-500/20 to-blue-500/10 blur-3xl pointer-events-none" />
 
         {/* Orbiting Orbital Cosmic SVG Circles */}
         <motion.svg
-          className="w-[280px] sm:w-[340px] xl:w-[480px] h-[280px] sm:h-[340px] xl:h-[480px] pointer-events-none"
+          className="w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] xl:w-[390px] xl:h-[390px] pointer-events-none max-w-full"
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ export default function Photo() {
             y: 0,
             transition: { delay: 0.8, duration: 0.8, ease: "easeInOut" },
           }}
-          className="w-[240px] h-[240px] sm:w-[290px] sm:h-[290px] xl:w-[420px] xl:h-[420px] absolute rounded-full overflow-hidden border border-cyan-400/30 shadow-[0_0_40px_rgba(0,215,255,0.2)] bg-gradient-to-b from-cyan-950/20 to-black/80"
+          className="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] xl:w-[330px] xl:h-[330px] absolute rounded-full overflow-hidden border border-cyan-400/30 shadow-[0_0_40px_rgba(0,215,255,0.2)] bg-gradient-to-b from-cyan-950/20 to-black/80"
         >
           <Image
             src="/assets/ivan.jpeg"

@@ -148,37 +148,37 @@ export default function Resume() {
       <div className="container mx-auto px-4">
         <Tabs
           defaultValue="experience"
-          className="flex flex-col xl:flex-row gap-[60px]"
+          className="flex flex-col xl:flex-row gap-8 sm:gap-12 xl:gap-[60px]"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-4">
-            <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills & Tooling</TabsTrigger>
-            <TabsTrigger value="about">About Me</TabsTrigger>
+          <TabsList className="grid grid-cols-2 sm:flex sm:flex-row xl:flex-col w-full max-w-full xl:max-w-[380px] mx-auto xl:mx-0 gap-2.5 sm:gap-3 xl:gap-4">
+            <TabsTrigger value="experience" className="text-xs sm:text-base py-2.5 sm:py-3">Experience</TabsTrigger>
+            <TabsTrigger value="education" className="text-xs sm:text-base py-2.5 sm:py-3">Education</TabsTrigger>
+            <TabsTrigger value="skills" className="text-xs sm:text-base py-2.5 sm:py-3">Skills & Tooling</TabsTrigger>
+            <TabsTrigger value="about" className="text-xs sm:text-base py-2.5 sm:py-3">About Me</TabsTrigger>
           </TabsList>
 
           <div className="min-h-[70vh] w-full">
             {/* Experience */}
             <TabsContent value="experience" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-3xl sm:text-4xl font-bold text-white">{experience.title}</h3>
-                <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-sm leading-relaxed">
+              <div className="flex flex-col gap-5 sm:gap-[30px] text-center xl:text-left">
+                <h3 className="text-2xl sm:text-4xl font-bold text-white">{experience.title}</h3>
+                <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-xs sm:text-sm leading-relaxed">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 gap-[20px]">
+                  <ul className="grid grid-cols-1 gap-4 sm:gap-[20px]">
                     {experience.items.map((item, index) => (
                       <li
                         key={index}
-                        className="bg-secondary/40 border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center lg:items-start gap-2"
+                        className="bg-secondary/40 border border-white/10 p-4 sm:p-6 rounded-2xl flex flex-col justify-center items-center lg:items-start gap-2"
                       >
                         <span className="text-accent text-xs font-mono">{item.duration}</span>
-                        <h4 className="text-xl font-bold text-white text-center lg:text-left">
+                        <h4 className="text-lg sm:text-xl font-bold text-white text-center lg:text-left">
                           {item.position}
                         </h4>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2.5">
                           <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                          <p className="text-muted-foreground font-mono text-sm">{item.company}</p>
+                          <p className="text-muted-foreground font-mono text-xs sm:text-sm">{item.company}</p>
                         </div>
                       </li>
                     ))}
@@ -189,25 +189,25 @@ export default function Resume() {
 
             {/* Education */}
             <TabsContent value="education" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-3xl sm:text-4xl font-bold text-white">{education.title}</h3>
-                <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-sm leading-relaxed">
+              <div className="flex flex-col gap-5 sm:gap-[30px] text-center xl:text-left">
+                <h3 className="text-2xl sm:text-4xl font-bold text-white">{education.title}</h3>
+                <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-xs sm:text-sm leading-relaxed">
                   {education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 gap-[20px]">
+                  <ul className="grid grid-cols-1 gap-4 sm:gap-[20px]">
                     {education.items.map((item, index) => (
                       <li
                         key={index}
-                        className="bg-secondary/40 border border-white/10 p-6 rounded-2xl flex flex-col justify-center items-center lg:items-start gap-2"
+                        className="bg-secondary/40 border border-white/10 p-4 sm:p-6 rounded-2xl flex flex-col justify-center items-center lg:items-start gap-2"
                       >
                         <span className="text-purple-400 text-xs font-mono">{item.duration}</span>
-                        <h4 className="text-lg font-bold text-white text-center lg:text-left">
+                        <h4 className="text-base sm:text-lg font-bold text-white text-center lg:text-left">
                           {item.degree}
                         </h4>
                         <div className="flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-purple-400"></span>
-                          <p className="text-white/80 font-mono text-sm">{item.institution}</p>
+                          <p className="text-white/80 font-mono text-xs sm:text-sm">{item.institution}</p>
                         </div>
                         {item.detail && (
                           <p className="text-xs text-muted-foreground font-mono mt-1">{item.detail}</p>
@@ -221,24 +221,24 @@ export default function Resume() {
 
             {/* Skills */}
             <TabsContent value="skills" className="w-full">
-              <div className="flex flex-col gap-[30px]">
+              <div className="flex flex-col gap-5 sm:gap-[30px]">
                 <div className="text-center xl:text-left">
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white">{skills.title}</h3>
-                  <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-sm leading-relaxed mt-2">
+                  <h3 className="text-2xl sm:text-4xl font-bold text-white">{skills.title}</h3>
+                  <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-xs sm:text-sm leading-relaxed mt-2">
                     {skills.description}
                   </p>
                 </div>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
                     {skills.skillList.map((skill, index) => (
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[120px] bg-secondary/30 rounded-2xl flex flex-col justify-center items-center group border border-white/5 hover:border-accent/40 transition-all">
-                              <div className="text-4xl group-hover:text-accent transition-all duration-300">
+                            <TooltipTrigger className="w-full h-[105px] sm:h-[120px] bg-secondary/30 rounded-2xl flex flex-col justify-center items-center group border border-white/5 hover:border-accent/40 transition-all p-2">
+                              <div className="text-3xl sm:text-4xl group-hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
-                              <span className="text-xs font-mono text-muted-foreground mt-2 group-hover:text-white">
+                              <span className="text-[11px] sm:text-xs font-mono text-muted-foreground mt-2 group-hover:text-white text-center break-words px-1">
                                 {skill.name}
                               </span>
                             </TooltipTrigger>
@@ -256,21 +256,21 @@ export default function Resume() {
 
             {/* About Me */}
             <TabsContent value="about" className="w-full text-center xl:text-left">
-              <div className="flex flex-col gap-[30px]">
-                <h3 className="text-3xl sm:text-4xl font-bold text-white">{about.title}</h3>
-                <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-sm leading-relaxed">
+              <div className="flex flex-col gap-5 sm:gap-[30px]">
+                <h3 className="text-2xl sm:text-4xl font-bold text-white">{about.title}</h3>
+                <p className="max-w-[650px] text-muted-foreground mx-auto xl:mx-0 font-mono text-xs sm:text-sm leading-relaxed">
                   {about.description}
                 </p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[650px] mx-auto xl:mx-0">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 max-w-[650px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => (
                     <li
                       key={index}
-                      className="bg-secondary/30 border border-white/5 p-4 rounded-xl flex items-center gap-4"
+                      className="bg-secondary/30 border border-white/5 p-3.5 sm:p-4 rounded-xl flex items-center gap-3 sm:gap-4"
                     >
-                      <span className="text-muted-foreground text-xs font-mono min-w-[90px]">
+                      <span className="text-muted-foreground text-xs font-mono min-w-[85px] sm:min-w-[90px]">
                         {item.fieldName}:
                       </span>
-                      <span className="text-white text-sm font-semibold truncate font-mono">
+                      <span className="text-white text-xs sm:text-sm font-semibold break-words font-mono min-w-0">
                         {item.fieldValue}
                       </span>
                     </li>

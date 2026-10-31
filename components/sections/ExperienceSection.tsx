@@ -42,13 +42,13 @@ export default function ExperienceSection() {
                 </div>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {experienceData.map((exp, index) => (
                   <div
                     key={index}
-                    className="cosmic-glass cosmic-glass-hover rounded-3xl p-6 sm:p-7 relative overflow-hidden group border border-border/80"
+                    className="cosmic-glass cosmic-glass-hover rounded-3xl p-5 sm:p-7 relative overflow-hidden group border border-border/80"
                   >
-                    <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                       <span className="text-xs text-accent font-mono flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 border border-accent/20">
                         <FiCalendar /> {exp.duration}
                       </span>
@@ -57,20 +57,20 @@ export default function ExperienceSection() {
                       </span>
                     </div>
 
-                    <h4 className="text-xl font-bold text-white group-hover:text-accent transition-colors">
+                    <h4 className="text-lg sm:text-xl font-bold text-white group-hover:text-accent transition-colors">
                       {exp.position}
                     </h4>
-                    <p className="text-sm font-semibold text-cyan-300 font-mono mb-4">{exp.company}</p>
+                    <p className="text-xs sm:text-sm font-semibold text-cyan-300 font-mono mb-3 sm:mb-4">{exp.company}</p>
 
-                    <p className="text-sm text-muted-foreground leading-relaxed font-mono mb-5">
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-mono mb-4 sm:mb-5">
                       {exp.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 pt-3 border-t border-white/5">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-3 border-t border-white/5">
                       {exp.technologies.map((tech, tIdx) => (
                         <span
                           key={tIdx}
-                          className="text-xs font-mono px-2.5 py-1 rounded-md bg-secondary/50 text-cyan-200/90 border border-white/5"
+                          className="text-[11px] sm:text-xs font-mono px-2.5 py-0.5 sm:py-1 rounded-md bg-secondary/50 text-cyan-200/90 border border-white/5"
                         >
                           {tech}
                         </span>
@@ -93,22 +93,22 @@ export default function ExperienceSection() {
                 </div>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {educationData.map((edu, index) => (
                   <div
                     key={index}
-                    className="cosmic-glass cosmic-glass-hover rounded-3xl p-6 sm:p-7 relative overflow-hidden group border border-border/80"
+                    className="cosmic-glass cosmic-glass-hover rounded-3xl p-5 sm:p-7 relative overflow-hidden group border border-border/80"
                   >
-                    <div className="flex items-center justify-between gap-2 mb-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <span className="text-xs text-purple-300 font-mono flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-950/40 border border-purple-500/20">
                         <FiCalendar /> {edu.duration}
                       </span>
                     </div>
 
-                    <h4 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
+                    <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
                       {edu.degree}
                     </h4>
-                    <p className="text-xs text-muted-foreground font-mono mb-3">
+                    <p className="text-xs text-muted-foreground font-mono mb-2 sm:mb-3">
                       {edu.institution}
                     </p>
 
@@ -123,25 +123,25 @@ export default function ExperienceSection() {
 
           {/* Section 4 of Prompt: Cara Bekerja Sebagai Developer (Engineering Principles) */}
           <motion.div variants={fadeInUp} className="pt-8 border-t border-border/40">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-xl">
+            <div className="flex items-center gap-3 mb-6 sm:mb-8">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-lg sm:text-xl shrink-0">
                 <FiCompass />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white">Engineering Principles & Work Values</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground font-mono">
+                <h3 className="text-lg sm:text-2xl font-bold text-white leading-snug">Engineering Principles & Work Values</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground font-mono mt-1">
                   Prinsip kerja yang membedakan developer yang sekadar menulis kode dengan developer yang menjaga sistem tetap berjalan stabil di produksi.
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
               {workPrinciples.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={index}
-                    className="cosmic-glass cosmic-glass-hover rounded-2xl p-6 border border-border/70 relative group flex flex-col justify-between"
+                    className="cosmic-glass cosmic-glass-hover rounded-2xl p-5 sm:p-6 border border-border/70 relative group flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">

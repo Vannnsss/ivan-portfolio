@@ -56,32 +56,32 @@ export default function AboutSection() {
           {/* Editorial Card */}
           <motion.div
             variants={fadeInUp}
-            className="cosmic-glass rounded-3xl p-6 sm:p-10 border border-border/80 shadow-2xl relative overflow-hidden mb-8"
+            className="cosmic-glass rounded-3xl p-5 sm:p-8 md:p-10 border border-border/80 shadow-2xl relative overflow-hidden mb-8"
           >
             {/* Subtle glow border corner */}
             <div className="absolute top-0 right-0 w-44 h-44 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="inline-block px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-400/20 text-cyan-300 text-xs font-mono mb-4">
+            <div className="inline-block max-w-full px-3 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-400/20 text-cyan-300 text-[11px] sm:text-xs font-mono mb-4 break-words">
               Fullstack Developer | Linux Server & System Administration
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-5">
+            <h3 className="text-xl sm:text-3xl font-bold text-white mb-4 sm:mb-5 leading-snug">
               Bridging Applications, Databases, and Server Infrastructure
             </h3>
 
-            <p className="text-muted-foreground leading-relaxed text-base sm:text-lg mb-6 font-mono">
+            <p className="text-muted-foreground leading-relaxed text-sm sm:text-base md:text-lg mb-6 font-mono">
               {personalInfo.aboutDescription}
             </p>
 
             {/* Engineering Mindset Callout */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-cyan-950/20 border border-cyan-500/20 mb-8">
-              <p className="text-sm text-cyan-200/90 font-mono leading-relaxed">
+            <div className="p-4 sm:p-5 rounded-2xl bg-cyan-950/20 border border-cyan-500/20 mb-6 sm:mb-8">
+              <p className="text-xs sm:text-sm text-cyan-200/90 font-mono leading-relaxed">
                 <span className="text-accent font-semibold">Karakter Teknis:</span> Developer yang memahami hubungan erat antara logika aplikasi, relasi database, integrasi API, infrastruktur server, dan kebutuhan operasional bisnis — bukan sekadar berfokus pada pembuatan tampilan antarmuka.
               </p>
             </div>
 
             {/* Quick Details Attributes */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-6 border-t border-border/40">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-3.5 pt-6 border-t border-border/40">
               {attributes.map((attr, index) => {
                 const Icon = attr.icon;
                 return (
@@ -92,11 +92,11 @@ export default function AboutSection() {
                     <div className="w-9 h-9 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0">
                       <Icon className="text-base" />
                     </div>
-                    <div className="overflow-hidden">
+                    <div className="overflow-hidden min-w-0">
                       <span className="text-[11px] text-muted-foreground block font-mono">
                         {attr.label}
                       </span>
-                      <span className="text-xs sm:text-sm font-semibold text-white truncate block">
+                      <span className="text-xs sm:text-sm font-semibold text-white break-words block">
                         {attr.value}
                       </span>
                     </div>
@@ -107,13 +107,13 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Core Highlights Pillars */}
-          <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
             {coreHighlights.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
                   key={idx}
-                  className="cosmic-glass cosmic-glass-hover rounded-2xl p-6 border border-border/70 relative group"
+                  className="cosmic-glass cosmic-glass-hover rounded-2xl p-5 sm:p-6 border border-border/70 relative group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-accent group-hover:text-black transition-all duration-300">
                     <Icon className="text-xl" />
